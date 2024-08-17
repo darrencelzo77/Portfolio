@@ -121,6 +121,14 @@ h2, p{
     padding: 1rem;
     margin: 2rem;
 }
+
+#certificates{
+    text-align: justify;
+    padding: 1rem;
+    margin: 2rem;
+}
+
+
 #experience{
    align-content: center;
 }
@@ -130,7 +138,10 @@ h2, p{
 .section-container{
     padding: 20px;
     justify-content: center;
-    margin: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: -10px;
+    margin-top: -10px;
 }
 .description {
     font-size: 14px;
