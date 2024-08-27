@@ -294,6 +294,34 @@
         
     }
 </style>
+
+<script type="text/javascript">
+    function param(w,h) {
+        var width  = w;
+        var height = h;
+        var left = (screen.width  - width)/2;
+        var top = (screen.height - height)/2;
+        var params = 'width='+width+', height='+height;
+        params += ', top='+top+', left='+left;
+        params += ', directories=no';
+        params += ', location=no';
+        params += ', resizable=no';
+        params += ', status=no';
+        params += ', toolbar=no';
+        return params;
+    }
+
+    function openWin(url){
+        myWindow=window.open(url,'mywin',param(800,500));
+        myWindow.focus();
+    }
+
+    function openCustom(url,w,h){
+        myWindow=window.open(url,'mywin',param(w,h));
+        myWindow.focus();
+    }
+    
+</script>
 <body>
     <section id="profile">
         <div class="section-text">
@@ -308,9 +336,12 @@
                     <li><a href="#projects">Projects</a></li>
                 </ul>
             </div>
-            <div class="social-container">
+            <div style="margin-left:10px;" class="social-container">
                 <a href="https://www.linkedin.com/" target="_blank">
                     <img src="includes/linkedin.png" alt="My Linkedin Profile" class="icon" id="linked">
+                </a>
+                <a href="https://www.github.com/" target="_blank">
+                    <img src="includes/github.png" alt="My GitHub Profile" class="icon" id="github">
                 </a>
                 <a href="https://www.github.com/" target="_blank">
                     <img src="includes/github.png" alt="My GitHub Profile" class="icon" id="github">
@@ -394,10 +425,15 @@
         <section class="certificates" id="projects">
            <div class="project-container"><br><br><br>
             <img src="includes/dash.png" height="450">
+
                 <!-- <img src="includes/dash.png" alt="Student Counselling Management System" style="height:250px;width:500px;"> -->
                 <div>
-                    <h3><a title="View more..." href="#" target="_blank">NEUST Guidance Management with Decision-Support System<span class="arrow">↗</span></a></h3>
-                    <p>asfasfasfasdf</p>
+                    <h3><a style="cursor:pointer;" title="View more..." 
+        onclick="openCustom('view_guidance.html',800,700)"        >NEUST Guidance Management with Decision-Support System<span class="arrow">↗</span></a></h3>
+                    <p>A comprehensive information system designed to facilitate seamless interactions between 
+                    employees, students, and the Office of Guidance and Counselling. 
+                    This system streamlines transactions, ensuring efficient communication 
+                    and support for all users.</p>
                 </div>
             </div>
         </section>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="includes/favicon.png" type="image/png">
+    <!-- <link rel="stylesheet" href="includes/styles.css"> -->
+    <!-- <link rel="stylesheet" href="includes/mediaqueries.css"> -->
+    <title>Darren's Portfolio</title>
+</head>
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #0F172A;
+    }
+
+     /* Customized Scrollbar */
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #0F172A; /* Track color */
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg, #5ADFCB, #3D98FF); /* Gradient thumb color */
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(45deg, #3D98FF, #5ADFCB); /* Hover effect */
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+        background: linear-gradient(45deg, #00bcd4, #5ADFCB); /* Active effect */
+    }
+
+    body{
+        font-family: "Poppins", sans-serif;
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+    #content {
+        
+        overflow-y: auto;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: small;
+        color: #E2E8F0;
+    }
+
+    /* Make images in the certificates section responsive */
+    .certificates img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        max-width: 700px; /* Ensure it doesn’t grow too large */
+    }
+
+    /* Media Query for mobile devices */
+    @media (max-width: 768px) {
+        .certificates img {
+            max-width: 100%; /* Allow the images to use the full width of the container */
+        }
+    }
+
+ 
+</style>
+<body>
+    <section id="content">
+        <section class="certificates">
+            <div id="certificates"><br><br>
+            <div><h3>Login Interface</h3></div><br>
+                <img src="includes/guidance/login.png" >
+            </div>
+        </section>
+
+        <br>
+     	<section class="certificates">
+            <div id="certificates"><br><br>
+            <div><h3>Login Interface</h3></div><br>
+                <img src="includes/guidance/dashboard.png" >
+            </div>
+        </section>
+
+        <br>
+     	<section class="certificates">
+            <div id="certificates"><br><br>
+            <div><h3>Login Interface</h3></div><br>
+                <img src="includes/guidance/studentlist.png">
+            </div>
+        </section>
+
+        <br>
+     	<section class="certificates">
+            <div id="certificates"><br><br>
+            <div><h3>Login Interface</h3></div><br>
+                <img src="includes/guidance/studentinterface.png">
+            </div>
+        </section>
+
+        <br>
+     	<section class="certificates">
+            <div id="certificates"><br><br>
+            <div><h3>Login Interface</h3></div><br>
+                <img src="includes/guidance/update.png">
+            </div>
+        </section>
+
+        <br>
+     	<section class="certificates">
+            <div id="certificates"><br><br>
+            <div><h3>Login Interface</h3></div><br>
+                <img src="includes/guidance/studentinfosheet.png">
+            </div>
+        </section>
+
+        
+        
+    </section>
+</body>
+</html>
