@@ -1,342 +1,429 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="icon" href="includes/favicon.png" type="image/png">
-        <!-- <link rel="stylesheet" href="includes/styles.css"> -->
-        <link rel="stylesheet" href="includes/mediaqueries.css">
-        <title>Darren's Portfolio</title>
-    </head>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="includes/favicon.png" type="image/png">
+    <!-- <link rel="stylesheet" href="includes/styles.css"> -->
+    <link rel="stylesheet" href="includes/mediaqueries.css">
+    <title>Darren's Portfolio</title>
+</head>
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    background-color: #0F172A;
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #0F172A;
+    }
 
-}
-body{
-    font-family: "Poppins", sans-serif;
-}
-html{
-    scroll-behavior: smooth;
-}
+     /* Customized Scrollbar */
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
 
-.container {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-}
+    ::-webkit-scrollbar-track {
+        background: #0F172A; /* Track color */
+        border-radius: 10px;
+    }
 
-#profile {
-    width: 550px;
-    color: white;
-    padding: 25px;
-    position: fixed;
-    height: 100%;
-    box-sizing: border-box;
-}
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg, #5ADFCB, #3D98FF); /* Gradient thumb color */
+        border-radius: 10px;
+    }
 
-#content {
-    margin-left: 550px;
-    padding: 70px;
-    overflow-y: auto;
-    height: 100%;
-    box-sizing: border-box;
-    flex-grow: 1;
-    text-align: left;
-    font-size: small;
-    color: #E2E8F0;
-}
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(45deg, #3D98FF, #5ADFCB); /* Hover effect */
+    }
 
-.section-text{
-    padding-top: 4rem;
-    padding-left: 5rem;
-}
+    ::-webkit-scrollbar-thumb:active {
+        background: linear-gradient(45deg, #00bcd4, #5ADFCB); /* Active effect */
+    }
 
-h1{
- color: #5ADFCB;
- font-size: 3rem;
-}
-h2, p{
-    color: #E2E8F0;
-}
-.btn-container{
-    gap: 1rem;
-}
-.btn{
-    font-weight: 450;
-    transition: all 300ms ease;
-    padding: 0.3rem;
-    width: 8rem;
-    border-radius: 2rem;
-    margin: 0.5rem;
-}
-.btn-color-1{
-    border-color: #E2E8F0;
-    color: #5ADFCB;
-}
-.btn-color-1:hover{
-    cursor: pointer;
-    color: #5ADFCB;
-    box-shadow: 0 0 20px #5ADFCB;
-}
-.nav-links {
-    margin-top: 1.5rem;
-    list-style: none;
-    font-size: 1rem;
-}
+    body{
+        font-family: "Poppins", sans-serif;
+    }
 
-.nav-links li {
-    margin: 0.3rem 0;
-    position: relative;
-}
+    html{
+        scroll-behavior: smooth;
+    }
 
-.nav-links a {
-    color: #E9F0F8;
-    text-decoration: none;
-    display: inline-block;
-    transition: transform 300ms ease;
-    padding-left: 1.9rem; /* Adds space for the line */
-}
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+    }
 
-.nav-links a::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1.3rem;
-    height: 2px;
-    background-color: #5ADFCB;
-    transition: transform 300ms ease;
-}
+    #profile {
+        width: 100%;
+        color: white;
+        padding: 25px;
+        margin-left:-16px;
+        position: relative;
+        box-sizing: border-box;
+        margin-bottom: -90px;
+    }
 
-.nav-links a:hover {
-    transform: translateX(10px);
-    color: #5ADFCB;
-}
+    #content {
+        padding: 70px;
+        overflow-y: auto;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: small;
+        color: #E2E8F0;
+    }
 
-.nav-links a:hover::before {
-    transform: translate(10px, -50%);
-}
-.icon{
-    cursor: pointer;
-    height: 1.5rem;
-}
+    .section-text{
+        padding-top: 4rem;
+        padding-left: 5rem;
+    }
+/*
+    h1{
+        color: #5ADFCB;
+        font-size: 3rem;
+    }*/
 
-#about{
-    text-align: justify;
-    padding: 1rem;
-    margin: 2rem;
-}
+     h2{
+        color: #5ADFCB;
+        font-size: 2.5rem;
+    }
 
-#certificates{
-    text-align: justify;
-    padding: 1rem;
-    margin: 2rem;
-}
+    h3, p{
+        color: #E2E8F0;
+    }
 
+    .btn-container{
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
 
-#experience{
-   align-content: center;
-}
-#experience h3{
-    font-style: bold;
-}
-.section-container{
-    padding: 20px;
-    justify-content: center;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: -10px;
-    margin-top: -10px;
-}
-.description {
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 15px 0;
-}
+    .btn{
+        font-weight: 450;
+        transition: all 300ms ease;
+        padding: 0.3rem;
+        width: 100%;
+        border-radius: 2rem;
+        margin: 0.5rem 0;
+    }
 
-.tags {
-    display: flex;
-    gap: 10px;
-}
+    .btn-color-1{
+        border-color: #E2E8F0;
+        color: #5ADFCB;
+    }
 
-.tag {
-    background-color: #122B39;
-    color: #5ADFCB;
-    border-radius: 15px;
-    padding: 5px 10px;
-    font-size: 15px;
-    font-weight: 200;
-    margin: 5px;
-}
+    .btn-color-1:hover{
+        cursor: pointer;
+        color: #5ADFCB;
+        box-shadow: 0 0 20px #5ADFCB;
+    }
 
-#projects {
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    justify-content: center;
+    .nav-links {
+        margin-top: 1.5rem;
+        list-style: none;
+        font-size: 1rem;
+    }
 
-}
+    .nav-links li {
+        margin: 0.3rem 0;
+        position: relative;
+    }
 
-.project-container{
-    align-items: center;
-    margin: 10px;
-    padding: 20px;
-}
-.project-container img {
-    width: 90px;
-    height: auto;
-}
+    .nav-links a {
+        color: #E9F0F8;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 300ms ease;
+        padding-left: 1.9rem;
+    }
 
-.project-container a {
-    color: #00bcd4;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    display: inline-block;
-}
+    .nav-links a::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.3rem;
+        height: 2px;
+        background-color: #5ADFCB;
+        transition: transform 300ms ease;
+    }
 
-.project-container .arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
-    margin-left: 5px;
-    color: #5ADFCB;
-}
+    .nav-links a:hover {
+        transform: translateX(10px);
+        color: #5ADFCB;
+    }
 
-.project-container a:hover .arrow {
-    transform: translateY(-10px);
-}
-    </style>
-    <body>
-    
+    .nav-links a:hover::before {
+        transform: translate(10px, -50%);
+    }
 
-        <section id="profile">
-            <div class="section-text">
-                <h1>Darren Celzo</h1>
-                <h2>Fullstack Developer</h2>
-                <p>I build management systems and <br> engaging digital experiences</p>
-                <div>
-                    <ul class="nav-links">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#certificates">Certificates</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                    </ul>
-                </div>
-                <div class="social-container">
-                    <a href="https://www.linkedin.com/" target="_blank">
-                        <img src="includes/linkedin.png" alt="My Linkedin Profile" class="icon" id="linked">
-                    </a>
-                    <a href="https://www.github.com/" target="_blank">
-                        <img src="includes/github.png" alt="My GitHub Profile" class="icon" id="github">
-                    </a>
-                </div> 
-                <div class="btn-container">
-                    <button class="btn btn-color-1" onclick="window.open('includes/CV.pdf')">Download Full CV</button>
-                </div>
+    .icon{
+        cursor: pointer;
+        height: 1.5rem;
+    }
+
+    .section-container{
+        padding: 20px;
+        justify-content: center;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: -10px;
+        margin-top: -10px;
+    }
+
+    .description {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 15px 0;
+    }
+
+    .tags {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        background-color: #122B39;
+        color: #5ADFCB;
+        border-radius: 15px;
+        padding: 5px 10px;
+        font-size: 15px;
+        font-weight: 200;
+        margin: 5px;
+    }
+    /* Apply to all images in the project-container */
+
+    .project-container img {
+        width: 100%; 
+        height: auto; 
+    }
+
+    /* Make images in the certificates section responsive */
+    .certificates img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        max-width: 450px; /* Ensure it doesn’t grow too large */
+    }
+
+    /* Media Query for mobile devices */
+    @media (max-width: 768px) {
+        .project-container img {
+            height: auto; /* Ensure height scales correctly */
+            max-width: 100%; /* Restrict the width to container width */
+        }
+        
+        .certificates img {
+            max-width: 100%; /* Allow the images to use the full width of the container */
+        }
+    }
+
+  /*  #projects {
+         width: 100%;
+        height: auto; 
+        max-width: 450px; 
+    }*/
+
+    .project-container{
+        align-items: center;
+/*        margin: 10px;*/
+/*        padding: 20px;*/
+    }
+
+   /* .project-container img {
+        width: 100%;
+        height: auto;
+    }
+*/
+
+    .project-container a {
+        color: #00bcd4;
+        text-decoration: none;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+    }
+
+    .project-container .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        margin-left: 5px;
+        color: #5ADFCB;
+    }
+
+    .project-container a:hover .arrow {
+        transform: translateY(-10px);
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            flex-direction: row;
+        }
+
+        #profile {
+            width: 550px;
+            position: fixed;
+            height: 100%;
+        }
+
+        #content {
+            margin-left: 550px;
+            padding: 70px;
+            height: 100%;
+        }
+
+        .section-text{
+            padding-top: 4rem;
+            padding-left: 5rem;
+        }
+
+        h1{
+            font-size: 3rem;
+        }
+
+        .btn {
+            width: 8rem;
+        }
+
+        
+    }
+</style>
+<body>
+    <section id="profile">
+        <div class="section-text">
+            <h2>Darren Celzo</h2>
+            <h3>Fullstack Developer</h3>
+            <p>I build management systems and <br> engaging digital experiences</p>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </div>
+            <div class="social-container">
+                <a href="https://www.linkedin.com/" target="_blank">
+                    <img src="includes/linkedin.png" alt="My Linkedin Profile" class="icon" id="linked">
+                </a>
+                <a href="https://www.github.com/" target="_blank">
+                    <img src="includes/github.png" alt="My GitHub Profile" class="icon" id="github">
+                </a>
+            </div> 
+            <div class="btn-container">
+                <button class="btn btn-color-1" onclick="window.open('includes/CV.pdf')">Download Full CV</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="content">
+        <section class="about">
+            <div id="about"><br><br><br>    
+                <p>
+                    When I started senior high school, I chose the ICT strand due to my interest in computers and the growing demand in the tech industry. I began learning basic programming, which led me to pursue an Information Technology degree in college. <br> <br>There, I advanced my programming skills and developed a management system.
+                    In my final year, I worked as a freelance programmer, primarily creating management systems using PHP. This experience taught me valuable skills in client communication, time management, and independent problem-solving. <br>        <br> 
+                    Now, I aim to secure a position where I can leverage my strong foundation in programming and networking, gain hands-on experience, and contribute to a forward-thinking IT environment. Driven by a passion for technology and continuous learning, I look forward to bringing my skills and dedication to your organization.
+                </p>
             </div>
         </section>
-        <section id="content">
-            <section class="about">
-                <div id="about">
-                    <p>
-                        When I started senior high school, I chose the ICT strand due to my interest in computers and the growing demand in the tech industry. I began learning basic programming, which led me to pursue an Information Technology degree in college. <br> <br>There, I advanced my programming skills and developed a management system.
-                        In my final year, I worked as a freelance programmer, primarily creating management systems using PHP. This experience taught me valuable skills in client communication, time management, and independent problem-solving. <br>        <br> 
-                        Now, I aim to secure a position where I can leverage my strong foundation in programming and networking, gain hands-on experience, and contribute to a forward-thinking IT environment. Driven by a passion for technology and continuous learning, I look forward to bringing my skills and dedication to your organization.
-                    </p>
-                </div>
-            </section>
-           
-            <section class="certificates">
-                <div id="certificates">
-                   <img src="includes/certiport.jpg" height="400">
-                </div>
 
+        <section class="certificates">
+            <div id="certificates"><br><br><br>
+                <img src="includes/certiport.jpg" height="450">
+            </div>
+            <div id="certificates"><br><br>
+                 <img src="includes/IRCITE.jpg" height="450">
+            </div><br>
+        </section>
 
-                <div id="certificates">
-                   <img src="includes/IRCITE.jpg" height="400">
-                </div>
-            </section>
-            
-
-         
-            <section id="experience" >
-                <div class="section-container">
-                  <h3>Freelance (Fullstack Developer)</h3>
-                  <p>2023 — Present</p>
-                  <p className="description">Build, developed and maintain web-based systems for clients.</p>
+        <section class="certificates" id="experience">
+            <div><br><br><br>
+                <h3>Freelance (Fullstack Developer)</h3>
+                <p>2023 — Present</p>
+                    <p className="description">Build, developed and maintain web-based systems for clients.</p>
                     <div class="tags">
                         <span class="tag">JavaScript</span>
                         <span class="tag">AJAX</span>
                         <span class="tag">jQuery</span>
                         <span class="tag">PHP</span>
                         <span class="tag">PHP Laravel</span>
-                    </div>
                 </div>
-
-                <div class="section-container">
-                    <h3>Intern (NEUST MIS)</h3>
-                    <p>January 2024 - May 2024</p>
-                    <p className="description">Serving as a junior programmer, providing technical support to interns and employees</p>
-                      <div class="tags">
-                          <span class="tag">JavaScript</span>
-                          <span class="tag">AJAX</span>
-                          <span class="tag">jQuery</span>
-                          <span class="tag">PHP</span>
-                          <span class="tag">PHP Laravel</span>
-                      </div>
-                </div>
-                <div class="section-container">
-                    <h3>Job Order (NEUST MIS)</h3>
-                    <p>January 2024 - May 2024</p>
-                    <p className="description">Collaborated and work with team on a web-based document system project.</p>
-                      <div class="tags">
-                          <span class="tag">JavaScript</span>
-                          <span class="tag">AJAX</span>
-                          <span class="tag">jQuery</span>
-                          <span class="tag">PHP</span>
-                          <span class="tag">PHP Laravel</span>
-                      </div>
-                </div>
-                    
-              </section>
-            <section id="projects">
-                <div class="project-container">
-                    <img src="includes/dash.png" alt="Student Counselling Management System" style="height:250px;width:500px;">
-                    <div>
-                        <h2><a href="#" target="_blank">NEUST Guidance Management with Decision-Support System<span class="arrow">↗</span></a></h2>
-                        <p>I dedicated this to my Love of my Life</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects">
-                <div class="project-container">
-                    <img src="includes/dash.png" alt="Student Counselling Management System" style="height:250px;width:500px;">
-                    <div>
-                        <h2><a href="#" target="_blank">NEUST Guidance Management with Decision-Support System<span class="arrow">↗</span></a></h2>
-                        <p>I dedicated this to my Love of my Life</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects">
-                <div class="project-container">
-                    <img src="includes/dash.png" alt="Student Counselling Management System" style="height:250px;width:500px;">
-                    <div>
-                        <h2><a href="#" target="_blank">NEUST Guidance Management with Decision-Support System<span class="arrow">↗</span></a></h2>
-                        <p>I dedicated this to my Love of my Life</p>
-                    </div>
-                </div>
-            </section>
-            
+            </div>
         </section>
-    </body>
+
+        <section class="certificates">
+            <div><br><br>
+                <h3>Intern (NEUST MIS)</h3>
+                <p>January 2024 - May 2024</p>
+                <p className="description">Serving as a junior programmer, providing technical support to interns and employees</p>
+                <div class="tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">AJAX</span>
+                    <span class="tag">jQuery</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">PHP Laravel</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="certificates">
+            <div><br><br>
+                <h3>Job Order (NEUST MIS)</h3>
+                <p>January 2024 - May 2024</p>
+                <p className="description">Collaborated and work with team on a web-based document system project.</p>
+                <div class="tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">AJAX</span>
+                    <span class="tag">jQuery</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">PHP Laravel</span>
+                </div>
+            </div>
+        </section>
+
+        <br><br><br><br><br><br>
+
+
+
+        <section class="certificates" id="projects">
+           <div class="project-container"><br><br><br>
+            <img src="includes/dash.png" height="450">
+                <!-- <img src="includes/dash.png" alt="Student Counselling Management System" style="height:250px;width:500px;"> -->
+                <div>
+                    <h3><a title="View more..." href="#" target="_blank">NEUST Guidance Management with Decision-Support System<span class="arrow">↗</span></a></h3>
+                    <p>I dedicated this to my Love of my Life</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="certificates" id="projects">
+           <div class="project-container"><br><br>
+            <img src="includes/dash.png" height="450">
+                <!-- <img src="includes/dash.png" alt="Student Counselling Management System" style="height:250px;width:500px;"> -->
+                <div>
+                    <h3><a title="View more..." href="#" target="_blank">NEUST Guidance Management with Decision-Support System<span class="arrow">↗</span></a></h3>
+                    <p>I dedicated this to my Love of my Life</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="certificates" id="projects">
+           <div class="project-container"><br><br>
+            <img src="includes/dash.png" height="450">
+                <!-- <img src="includes/dash.png" alt="Student Counselling Management System" style="height:250px;width:500px;"> -->
+                <div>
+                    <h3><a title="View more..." href="#" target="_blank">NEUST Guidance Management with Decision-Support System<span class="arrow">↗</span></a></h3>
+                    <p>I dedicated this to my Love of my Life</p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+</body>
 </html>
