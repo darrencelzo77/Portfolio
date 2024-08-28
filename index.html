@@ -293,6 +293,19 @@
 
         
     }
+    .myimage {
+    width: 150px; /* Adjusts the width of the image */
+    height: 150px; /* Ensures the image is square */
+    border-radius: 50%; /* Makes the image circular */
+    border: 3px solid #5ADFCB; /* Adds a border with a color matching the theme */
+    box-shadow: 0 0 15px rgba(90, 223, 203, 0.7); /* Adds a subtle glow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds smooth transition for hover effects */
+}
+
+.myimage:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
+    box-shadow: 0 0 25px rgba(90, 223, 203, 0.9); /* Intensifies the glow on hover */
+}
 </style>
 
 <script type="text/javascript">
@@ -325,6 +338,9 @@
 <body>
     <section id="profile">
         <div class="section-text">
+            <div>
+                <img class="myimage" src="includes/acuna.jpg" height="150"/>
+            </div>
             <h2>Darren Celzo</h2>
             <h3>Fullstack Developer</h3>
             <p>I build management systems and <br> engaging digital experiences</p>
