@@ -295,3 +295,7 @@
     box-shadow: 0 0 25px rgba(90, 223, 203, 0.9); /* Intensifies the glow on hover */
     
 }
+
+.justify-text {
+    text-align: justify;
+}
