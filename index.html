@@ -30,11 +30,18 @@
         myWindow.focus();
     }
 
-    function openCustom(url,w,h){
-        myWindow=window.open(url,'mywin',param(w,h));
+    // function openCustom(url,w,h){
+    //     myWindow=window.open(url,'mywin',param(w,h));
+    //     myWindow.focus();
+    // }
+    
+    function openCustom(url, w, h) {
+        // Give each window a unique name using a timestamp or counter
+        let uniqueWindowName = 'mywin_' + new Date().getTime(); 
+        let myWindow = window.open(url, uniqueWindowName, `width=${w},height=${h}`);
         myWindow.focus();
     }
-    
+
 </script>
 <body>
     <section id="profile">
